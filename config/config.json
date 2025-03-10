@@ -1,0 +1,26 @@
+{
+    "SPREADSHEET_ID" : "12tCHTVHo1BiPyUuZrMjinjVHGL7jEPli82aIpu6vWvs",
+    "RANGE_NAME" : "Sheet1!A1",
+    "CATEGORIES": [
+        "OIL",
+        "OIL FILTER",
+        "CABIN FILTER",
+        "AIR FILTER",
+        "FUEL FILTER",
+        "SPARKPLUGS",
+        "CAR BATTERIES",
+        "ENGINE FLUSHING",
+        "GEAR OIL",
+        "BRAKE FLUID",
+        "BRAKE PARTS CLEANER",
+        "BRAKE PADS",
+        "BRAKE SHOE",
+        "WIPERBLADES",
+        "BULBS",
+        "ATF/CVT",
+        "WHEELS WEIGHTS",
+        "GREASE",
+        "COOLANTS",
+        "FREON"
+      ]
+}

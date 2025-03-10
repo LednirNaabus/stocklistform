@@ -1,7 +1,6 @@
-import os
-import flask
 from flask import Flask, render_template, request, redirect
 from google_sheets import append_to_sheet
+from config.config import CATEGORIES
 
 app = Flask(__name__)
 
@@ -12,14 +11,8 @@ def index():
 @app.route("/submit", methods=['POST'])
 def submit():
     values = []
-    categories = [
-        'Oil', 'Oil Filter', 'Cabin Filter', 'Air Filter', 'Fuel Filter', 
-        'Sparkplugs', 'Car Batteries', 'Engine Flushing', 'Gear Oil', 'Brake Fluid', 
-        'Brake Parts Cleaner', 'Brake Pads', 'Brake Shoe', 'Wiperblades', 'Bulbs', 
-        'ATF/CVT', 'Wheels Weights', 'Grease', 'Coolants', 'Freon'
-    ]
 
-    for i, category in enumerate(categories, start=1):
+    for i, category in enumerate(CATEGORIES, start=1):
         is_Rapide = 1 if f'isRapide_{i}' in request.form else 0
         is_NonRapide = 1 if f'isNonRapide_{i}' in request.form else 0
 
