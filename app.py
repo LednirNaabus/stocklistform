@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect
-from google_sheets import append_to_sheet
+from google_sheets.append_to_sheet import append_to_sheet
 from config.config import CATEGORIES
 
 app = Flask(__name__)
