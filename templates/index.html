@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Form</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="text"] {
+            width: 100%;
+        }
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Inventory Form</h2>
+    <form action="/submit" method="POST">
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Is Rapide</th>
+                    <th>Brand</th>
+                    <th>Why?</th>
+                    <th>Is Non-Rapide</th>
+                    <th>Brand</th>
+                    <th>Why?</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% set categories = [
+                    'Oil', 'Oil Filter', 'Cabin Filter', 'Air Filter', 'Fuel Filter', 
+                    'Sparkplugs', 'Car Batteries', 'Engine Flushing', 'Gear Oil', 'Brake Fluid', 
+                    'Brake Parts Cleaner', 'Brake Pads', 'Brake Shoe', 'Wiperblades', 'Bulbs', 
+                    'ATF/CVT', 'Wheels Weights', 'Grease', 'Coolants', 'Freon' 
+                ] %}
+                {% for category in categories %}
+                <tr>
+                    <td>{{ category }}</td>
+                    <td><input type="checkbox" name="isRapide_{{ loop.index }}" value="Yes"></td>
+                    <td><input type="text" name="brandRapide_{{ loop.index }}"></td>
+                    <td><input type="text" name="whyRapide_{{ loop.index }}"></td>
+                    <td><input type="checkbox" name="isNonRapide_{{ loop.index }}" value="Yes"></td>
+                    <td><input type="text" name="brandNonRapide_{{ loop.index }}"></td>
+                    <td><input type="text" name="whyNonRapide_{{ loop.index }}"></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
